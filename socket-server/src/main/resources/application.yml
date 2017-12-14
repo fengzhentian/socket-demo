@@ -1,0 +1,6 @@
+server:
+  port: 11220
+
+#socket服务端端口
+socket:
+  port: 11221

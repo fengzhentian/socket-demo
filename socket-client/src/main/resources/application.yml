@@ -1,0 +1,11 @@
+server:
+  port: 11222
+
+#客户端
+client:
+  code: 1001
+
+#socket服务端
+socket:
+  address: 127.0.0.1
+  port: 11221
