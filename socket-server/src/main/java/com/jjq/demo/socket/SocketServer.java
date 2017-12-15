@@ -5,17 +5,18 @@ import java.net.ServerSocket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.jjq.demo.common.SocketServerGlobal;
+import com.jjq.demo.properties.SocketServerProperties;
 
 @Component
 public class SocketServer {
     private Logger logger = LoggerFactory.getLogger(SocketServer.class);
 
-    @Value("${socket.port}")
-    private int port;
+    @Autowired
+    private SocketServerProperties socketServerProperties;
 
     private ListeningThread listeningThread;
 
@@ -23,6 +24,7 @@ public class SocketServer {
 
         try {
             this.logger.info("======Socket服务端启动准备中======");
+            int port = socketServerProperties.getPort();
             ServerSocket serverSocket = new ServerSocket(port);
             SocketServerGlobal.SERVER_SOCKET = serverSocket;
             this.logger.info("======Socket服务端启动完成，占用{}端口======", port);

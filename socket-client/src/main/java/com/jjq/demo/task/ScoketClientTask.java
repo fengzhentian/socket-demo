@@ -2,12 +2,13 @@ package com.jjq.demo.task;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.jjq.demo.common.SocketClientGlobal;
+import com.jjq.demo.properties.SocketServerProperties;
 import com.jjq.demo.socket.SocketClient;
 
 /**
@@ -25,17 +26,16 @@ public class ScoketClientTask {
      */
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Value("${socket.address}")
-    private String address;
-
-    @Value("${socket.port}")
-    private int port;
+    @Autowired
+    private SocketServerProperties socketServerProperties;
 
     /**
      * 10秒定时检测socket客户端正常性
      */
     @Scheduled(cron = "0/10 * *  * * ? ")
     public void doCheckSocketAlive() {
+        String address = socketServerProperties.getAddress();
+        int port = socketServerProperties.getPort();
         if (SocketClientGlobal.SCOKET_CLIENT == null) {
             SocketClientGlobal.SCOKET_CLIENT = new SocketClient(address, port);
         }

@@ -7,5 +7,6 @@ client:
 
 #socket服务端
 socket:
-  address: 127.0.0.1
-  port: 11221
+  server:
+    address: 127.0.0.1
+    port: 11221

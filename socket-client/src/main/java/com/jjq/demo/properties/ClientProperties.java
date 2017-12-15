@@ -1,9 +1,9 @@
 package com.jjq.demo.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration
 @ConfigurationProperties(prefix = ClientProperties.PREFIX)
 public class ClientProperties {
 

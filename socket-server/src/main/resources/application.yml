@@ -3,4 +3,5 @@ server:
 
 #socket服务端端口
 socket:
-  port: 11221
+  server:
+    port: 11221
