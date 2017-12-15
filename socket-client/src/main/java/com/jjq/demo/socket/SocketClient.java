@@ -168,21 +168,18 @@ public class SocketClient {
 
                     if (SocketMessageType.MESSAGE.equals(socketMessage.getType())) {
                         // 消息包
-                        // logger.info("======Socket客户端接收信息：{}======", socketMessage.getMsg());
-                        logger.info("======Socket Client receiving message:{}======", socketMessage.getMsg());
+                        logger.info("======Socket客户端接收信息：{}======", socketMessage.getMsg());
 
                         // 后续操作
                         messageHandle.handle(socketMessage.getMsg());
                     }
                     else if (SocketMessageType.HEARTBEAT.equals(socketMessage.getType())) {
                         // 心跳包
-                        // logger.debug("======Socket客户端收到服务器心跳包======");
-                        logger.info("======Socket Client receive server HeartBeat======");
+                        logger.debug("======Socket客户端收到服务器心跳包======");
                     }
 
                 } catch (Exception e) {
-                    // logger.error("======Socket客户端接收信息异常======", e);
-                    logger.error("======Socket Client receiving message exception occurred======", e);
+                    logger.error("======Socket客户端接收信息异常======", e);
                     SocketClient.this.reconnect();
                 }
             }
