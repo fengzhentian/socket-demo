@@ -13,6 +13,7 @@ import com.jjq.demo.domain.SocketMessage;
 import com.jjq.demo.domain.SocketMessageData;
 import com.jjq.demo.enums.SocketMessageType;
 import com.jjq.demo.socket.Connection;
+import com.jjq.demo.socket.handle.SocketMessageHandle;
 import com.jjq.demo.util.SpringContextHolder;
 
 public class SocketClient {
@@ -97,6 +98,16 @@ public class SocketClient {
         connection.sendHeartbeat();
     }
 
+    /**
+     * 发送消息
+     * 
+     * @param message
+     * @throws IOException
+     */
+    public void sendMessage(String message) throws IOException {
+        connection.sendMessage(message);
+    }
+
     public SocketMessage receiveMessage() throws IOException {
         return connection.receiveMessage();
     }
@@ -116,16 +127,6 @@ public class SocketClient {
         } catch (IOException e) {
             logger.error("======Socket客户端上报客户端编号异常======", e);
         }
-    }
-
-    /**
-     * 发送消息
-     * 
-     * @param message
-     * @throws IOException
-     */
-    public void sendMessage(String message) throws IOException {
-        connection.sendMessage(message);
     }
 
     /**

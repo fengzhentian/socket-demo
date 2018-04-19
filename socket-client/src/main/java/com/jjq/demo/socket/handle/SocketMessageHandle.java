@@ -1,4 +1,4 @@
-package com.jjq.demo.socket;
+package com.jjq.demo.socket.handle;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +9,8 @@ import com.alibaba.fastjson.TypeReference;
 import com.jjq.demo.biz.domain.MessageRequest;
 import com.jjq.demo.common.SocketContentType;
 import com.jjq.demo.domain.SocketMessageData;
+import com.jjq.demo.service.ConfirmService;
+import com.jjq.demo.util.SpringContextHolder;
 
 public class SocketMessageHandle {
     private static final Logger logger = LoggerFactory
@@ -35,8 +37,8 @@ public class SocketMessageHandle {
                         });
                 logger.info("======Socket客户端处理接收数据{}======", JSON.toJSON(request));
 
-                // TODO 经过后续处理后
-
+                ConfirmService confirmService = SpringContextHolder.getBean("confirmService");
+                confirmService.doConfirm(request.getData());
             }
         } catch (Exception e) {
             logger.error("======Socket客户端处理接收数据异常======", e);
