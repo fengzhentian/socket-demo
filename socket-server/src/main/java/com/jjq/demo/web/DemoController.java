@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jjq.demo.biz.domain.MessageRequest;
 import com.jjq.demo.common.SocketContentType;
+import com.jjq.demo.common.utils.BizResultUtil;
+import com.jjq.demo.common.utils.SocketPushRequestUtil;
+import com.jjq.demo.common.vo.BizResultVO;
 import com.jjq.demo.socket.service.SocketEventPushService;
-import com.jjq.demo.utils.BizResultUtil;
-import com.jjq.demo.utils.SocketPushRequestUtil;
-import com.jjq.demo.web.vo.BizResultVO;
-import com.jjq.demo.web.vo.SocketPushRequest;
+import com.jjq.demo.socket.vo.SocketPushRequest;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

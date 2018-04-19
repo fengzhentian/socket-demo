@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.jjq.demo.common.SocketServerGlobal;
-import com.jjq.demo.properties.SocketServerProperties;
+import com.jjq.demo.common.constants.SocketServerGlobal;
+import com.jjq.demo.common.properties.SocketServerProperties;
 
 @Component
 public class SocketServer {

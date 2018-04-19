@@ -1,7 +1,7 @@
-package com.jjq.demo.utils;
+package com.jjq.demo.common.utils;
 
+import com.jjq.demo.socket.vo.SocketPushRequest;
 import com.jjq.demo.util.SocketMessageDataUtil;
-import com.jjq.demo.web.vo.SocketPushRequest;
 
 public class SocketPushRequestUtil {
 

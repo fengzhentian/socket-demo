@@ -1,7 +1,7 @@
-package com.jjq.demo.utils;
+package com.jjq.demo.common.utils;
 
+import com.jjq.demo.common.vo.BizResultVO;
 import com.jjq.demo.constants.ErrorType;
-import com.jjq.demo.web.vo.BizResultVO;
 
 public class BizResultUtil {
 

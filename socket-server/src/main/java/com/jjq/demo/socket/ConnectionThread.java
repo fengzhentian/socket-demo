@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jjq.demo.common.SocketContentType;
-import com.jjq.demo.common.SocketServerGlobal;
-import com.jjq.demo.domain.SocketClientData;
+import com.jjq.demo.common.constants.SocketServerGlobal;
 import com.jjq.demo.domain.SocketMessage;
 import com.jjq.demo.enums.SocketMessageType;
-import com.jjq.demo.socket.Connection;
+import com.jjq.demo.socket.domain.SocketClientData;
+import com.jjq.demo.socket.handle.SocketMessageHandle;
 
 public class ConnectionThread extends Thread {
     private static final Logger logger = LoggerFactory.getLogger(ConnectionThread.class);
@@ -77,9 +77,12 @@ public class ConnectionThread extends Thread {
                             logger.info("======Socket客户端编号：{}",
                                     json.getString("data"));
                             data.setClientCode(json.getString("data"));
+                        } else {
+                            SocketMessageHandle messageHandle = new SocketMessageHandle();
+                            messageHandle.handle(msg);
                         }
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        logger.error("======Socket服务端处理接收数据异常======", e);
                     }
                 }
                 else if (SocketMessageType.HEARTBEAT.equals(socketMessage.getType())) {

@@ -1,4 +1,4 @@
-package com.jjq.demo.domain;
+package com.jjq.demo.socket.domain;
 
 import com.jjq.demo.socket.ConnectionThread;
 

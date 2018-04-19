@@ -1,4 +1,4 @@
-package com.jjq.demo.properties;
+package com.jjq.demo.common.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,17 @@ public class SocketServerProperties {
 
     public static final String PREFIX = "socket.server";
 
+    private String address;
+
     private int port;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public int getPort() {
         return port;

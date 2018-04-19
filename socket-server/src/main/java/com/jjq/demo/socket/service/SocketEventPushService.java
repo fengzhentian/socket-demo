@@ -9,10 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.jjq.demo.common.SocketServerGlobal;
-import com.jjq.demo.domain.SocketClientData;
+import com.jjq.demo.common.constants.SocketServerGlobal;
 import com.jjq.demo.socket.Connection;
-import com.jjq.demo.web.vo.SocketPushRequest;
+import com.jjq.demo.socket.domain.SocketClientData;
+import com.jjq.demo.socket.vo.SocketPushRequest;
 
 @Service
 public class SocketEventPushService {
@@ -49,7 +49,7 @@ public class SocketEventPushService {
     /**
      * 推送消息
      */
-    public int doSendMessage(Socket clientSokcet, String message) {
+    private int doSendMessage(Socket clientSokcet, String message) {
         try {
             Connection connection = new Connection(clientSokcet);
             connection.sendMessage(message);

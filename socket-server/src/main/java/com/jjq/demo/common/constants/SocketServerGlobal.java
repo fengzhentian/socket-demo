@@ -1,11 +1,11 @@
-package com.jjq.demo.common;
+package com.jjq.demo.common.constants;
 
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.jjq.demo.domain.SocketClientData;
+import com.jjq.demo.socket.domain.SocketClientData;
 
 /**
  * 全局静态参数配置

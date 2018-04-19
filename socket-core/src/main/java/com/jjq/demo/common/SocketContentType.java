@@ -12,4 +12,9 @@ public class SocketContentType {
      */
     public static final String MESSAGE_REQUEST = "1004";
 
+    /**
+     * 客户端确认推送信息
+     */
+    public static final String CLIENT_CONFIRM = "1005";
+
 }

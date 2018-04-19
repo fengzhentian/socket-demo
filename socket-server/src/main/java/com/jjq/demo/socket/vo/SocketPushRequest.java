@@ -1,4 +1,4 @@
-package com.jjq.demo.web.vo;
+package com.jjq.demo.socket.vo;
 
 /**
  * socket推送请求

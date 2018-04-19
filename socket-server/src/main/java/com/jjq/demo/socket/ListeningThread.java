@@ -8,8 +8,8 @@ import java.util.Vector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.jjq.demo.common.SocketServerGlobal;
-import com.jjq.demo.domain.SocketClientData;
+import com.jjq.demo.common.constants.SocketServerGlobal;
+import com.jjq.demo.socket.domain.SocketClientData;
 
 public class ListeningThread extends Thread {
     private Logger logger = LoggerFactory.getLogger(ListeningThread.class);

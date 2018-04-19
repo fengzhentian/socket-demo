@@ -8,10 +8,10 @@ import org.slf4j.LoggerFactory;
 
 import com.alibaba.fastjson.JSON;
 import com.jjq.demo.common.SocketContentType;
+import com.jjq.demo.common.properties.ClientProperties;
 import com.jjq.demo.domain.SocketMessage;
 import com.jjq.demo.domain.SocketMessageData;
 import com.jjq.demo.enums.SocketMessageType;
-import com.jjq.demo.properties.ClientProperties;
 import com.jjq.demo.socket.Connection;
 import com.jjq.demo.util.SpringContextHolder;
 

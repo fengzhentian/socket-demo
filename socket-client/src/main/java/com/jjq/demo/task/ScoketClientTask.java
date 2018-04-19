@@ -7,8 +7,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.jjq.demo.common.SocketClientGlobal;
-import com.jjq.demo.properties.SocketServerProperties;
+import com.jjq.demo.common.constants.SocketClientGlobal;
+import com.jjq.demo.common.properties.SocketServerProperties;
 import com.jjq.demo.socket.SocketClient;
 
 /**

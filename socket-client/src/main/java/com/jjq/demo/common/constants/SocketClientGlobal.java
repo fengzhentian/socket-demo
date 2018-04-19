@@ -1,4 +1,4 @@
-package com.jjq.demo.common;
+package com.jjq.demo.common.constants;
 
 import com.jjq.demo.socket.SocketClient;
 
